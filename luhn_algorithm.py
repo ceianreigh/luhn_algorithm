@@ -12,6 +12,15 @@ def verify_card_number(card_number):
     for digits in odd_digits:
         sum_odd += int(digits)
 
+    # add the even digits
+    sum_even = 0
+    for digits in even_digits:
+        # double the digit
+        number = int(digits) * 2
+        # if the result is 10 or more, sum the digits
+        if number >= 10:
+            number = (number // 10) + (number % 10)
+        sum_even += number
 
 def main():
     card_number = input("Enter card number: ")
